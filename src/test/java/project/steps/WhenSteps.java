@@ -2,6 +2,7 @@ package project.steps;
 
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
+import org.openqa.selenium.support.ui.Select;
 import project.browser.Driver;
 import project.data.LogOnAutomationPracticePageData;
 import project.pages.LogOnAutomationPracticePage;
@@ -18,12 +19,14 @@ public class WhenSteps {
     }
 
     @When("user complete form with valid data")
-    public void createLogAutomationPracticePage(DataTable dataTable){
+    public void completeFormWithValidData (LogOnAutomationPracticePageData insertValue){
 
-        List<LogOnAutomationPracticePageData> userList = dataTable.asList(LogOnAutomationPracticePageData.class);
-        for(LogOnAutomationPracticePageData seleniumEasyFormData : userList){
-            System.out.println(seleniumEasyFormData.toString());
-        }
+        logAutomationPracticePage.getEmailAddressInput().sendKeys(insertValue.getEmailAddress());
+        logAutomationPracticePage.getPasswordInput().sendKeys(insertValue.getPassword());
 
     }
+
 }
+
+
+

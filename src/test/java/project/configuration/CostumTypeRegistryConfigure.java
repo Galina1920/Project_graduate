@@ -35,4 +35,6 @@ public class CostumTypeRegistryConfigure extends DefaultTypeRegistryConfiguratio
 
     }
 
-}
+    }
+
+
